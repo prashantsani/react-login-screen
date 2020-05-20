@@ -1,0 +1,52 @@
+/* Only Resets  */
+* {
+  margin: 0;
+  padding: 0;
+}
+:root{
+
+  --blue: #74BBDB;
+  --gray-bg: #637a91;
+  --gray-dark: #919191;
+  --gray-lightest:#F9FAFA;
+  --gray-light: #E1E4E7;
+  
+  --font-color: #4C4F5C;
+  --bg-light: #FFF;
+
+  --red: #F44336;
+  --yellow: #FFEB3B;
+  --green: #5fcf80;
+}
+html{
+  background: linear-gradient( rgba(#637a91, 0.1), rgba(#637a91, 0.5) );
+  background-size: cover;
+  min-height: 100%;
+  font-size: 16px;
+  color: var(--font-color);
+  font-family: 'Open Sans', sans-serif;
+}
+fieldset{
+  border: none;
+  outline: none;
+}
+label, 
+input[type=password],
+input[type=text],
+input[type=email],
+input[type=submit]{
+  font-family: inherit;
+}
+input[type=password],
+input[type=text],
+input[type=email]{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+label{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+small{
+  font-size: 10px;
+}

@@ -1,0 +1,145 @@
+.register{
+  background: var(--bg-light);
+  max-width: 100%;
+  width: 500px;
+  max-width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0,0,0,.25);
+  padding: 0 0 25px 0;
+
+  &__title{
+    font-size: 16px;
+    line-height: 42px;
+    text-align: center;
+    color: var(--bg-light);
+    background: var(--gray-bg);
+  }
+
+  &__feilds-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 30px 20px 0;
+    margin: 10px 0 20px 30px;
+    border-bottom: 1px solid var(--gray-lightest);
+  }
+
+  &__feild{
+    width: 48%;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  label,
+  input[type=password],
+  input[type=text],
+  input[type=email]{
+    font-size: 12px;
+    display: block;
+    color: inherit;
+    width: 100%;
+  }
+
+  input[type=password],
+  input[type=text],
+  input[type=email]{
+    line-height: 32px;
+    height: 32px;
+  }
+
+  &__validation-msg{
+    position: absolute;
+    font-size: 8px;
+    color: var(--red);
+    left: 0;
+    bottom: -13px;
+
+    &:empty{
+      display: none;
+    }
+  }
+
+  &__strength-bar{
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    bottom: -1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    left: 0;
+    background: transparent;
+    transition: all 300ms ease-in-out;
+    
+    &[data-score="null"]{
+      width: 0;
+      background: var(--red);
+    }
+    
+    &[data-score="0"]{
+      width: 5%;
+      background: var(--red);
+    }
+    &[data-score="1"]{
+      width: 25%;
+      background: var(--red);
+    }
+    &[data-score="2"]{
+      width: 50%;
+      background: var(--yellow);
+    }
+    &[data-score="3"]{
+      width: 75%;
+      background: var(--green);
+    }
+    &[data-score="4"]{
+      width: 100%;
+      background: var(--green);
+    }
+  }
+
+
+  &__submit{
+    background-color: var(--green);
+    width: 100%;
+    width: calc(100% - 60px);
+    display: block;
+    border-radius: 3px;
+    margin: 0 auto 20px auto;
+    line-height: 32px;
+    color: white;
+  }
+
+  .emodgi{
+    position: absolute;
+    bottom: 4px;
+    right: 3px;
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  &__terms{
+    margin: 0 30px;
+    text-decoration: none;
+    display: block;
+
+    a{
+      color: var(--blue);
+
+      &:hover{
+        color: darken(#74BBDB, 0.3)
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .register{
+    &__feild{
+      width: 100%;
+    }
+  }
+}
