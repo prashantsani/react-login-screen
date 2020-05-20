@@ -8,13 +8,13 @@ class InputFields extends React.Component{
         super(props);
         this.state = {
             score: 'null',
-            validation_msg: '',
-            regex_email:  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm
+            validation_msg: ''
         }
     }
     
 
     validateField = e => {
+        const regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm;
         const val = e.target.value;
 
         const showInValid = e =>{
@@ -37,7 +37,7 @@ class InputFields extends React.Component{
 
         switch(this.props.type){
             case "email" :
-                if( this.state.regex_email.test(val)) {
+                if(regex_email.test(val)) {
                     showValid(e);
                 }else{
                     showInValid(e);
